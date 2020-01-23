@@ -1,0 +1,22 @@
+/*INPUTS*/
+
+.input {
+    display: flex;
+    align-items: flex-end;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+  
+  .input__description {
+    flex: 3;
+    text-align: left;
+  }
+  
+  .input__value {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .input > div:not(:last-child) {
+    margin-right: 2rem;
+  }

@@ -165,13 +165,13 @@
         inputBtn: '.add__btn',
         incomeContainer: '.income__list',
         expensesContainer:'.expenses__list',
-        budgetLabel: '.budget__value',
-        incomeLabel: '.budget__income--value',
-        expensesLabel: '.budget__expenses--value',
-        percentageLabel: '.budget__expenses--percentage',
+        budgetLabel: '.summary__value',
+        incomeLabel: '.lower-panel__income--value',
+        expensesLabel: '.lower-panel__expenses--value',
+        percentageLabel: '.lower-panel__expenses--percentage',
         container: '.container',
         expensesPercLabel: '.item__percentage',
-        dateLabel: '.budget__title--month'
+        dateLabel: '.summary__label--month'
     };
 
     // METHOD - Format NUmbers 

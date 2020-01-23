@@ -1,0 +1,32 @@
+.lower-panel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    color: $color-green;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 4rem;
+  }
+  
+  .lower-panel__income {
+    color: $color-green;
+    flex: 1;
+  }
+  
+  .lower-panel__expenses{
+    color: $color-red;
+    flex: 1;
+  }
+  
+  .lower-panel__expenses--percentage {
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  
+  .lower-panel__income-label,
+  .lower-panel__expenses-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
