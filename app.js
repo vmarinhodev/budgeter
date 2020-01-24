@@ -327,7 +327,7 @@
                 DOMstrings.inputValue
             );
 
-            Array.prototype.forEach.call(fields, function(cur) {
+            nodeListForEach(fields, function(cur) {
                 cur.classList.toggle('red');
                 cur.classList.toggle('red-border');
             });
@@ -427,7 +427,7 @@
     var ctrlDeleteItem = function(event) {
         var itemId, splitId, type, ID;
 
-        itemId = (event.target.parentNode.parentNode.parentNode.parentNode.id);
+        itemId = (event.target.parentNode.id);
 
         if(itemId) {
 
