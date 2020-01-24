@@ -159,18 +159,18 @@
 
     // Storing all the DOM strings
     var DOMstrings = {
-        inputType: '.add__type',
+        inputType: '#checkbox',
         inputDescription: '.add__description',
         inputValue: '.add__value',
         inputBtn: '.add__btn',
-        incomeContainer: '.income__list',
-        expensesContainer:'.expenses__list',
+        //incomeContainer: '.income__list',
+        //expensesContainer:'.expenses__list',
         budgetLabel: '.summary__value',
         incomeLabel: '.lower-panel__income--value',
         expensesLabel: '.lower-panel__expenses--value',
         percentageLabel: '.lower-panel__expenses--percentage',
-        container: '.container',
-        expensesPercLabel: '.item__percentage',
+        container: '.panel',
+        expensesPercLabel: '.panel__item__value-percentage',
         dateLabel: '.summary__label--month'
     };
 
@@ -214,7 +214,7 @@
          //Public method that can be accessed from the Global Method
          getinput: function() {
              return {
-                type: document.querySelector(DOMstrings.inputType).value, // Will be either income or expenses
+                type: document.querySelector(DOMstrings.inputType).checked ? 'exp' : 'inc', // Will be either income or expenses
                 description: document.querySelector(DOMstrings.inputDescription).value,
                 value: parseFloat(document.querySelector(DOMstrings.inputValue).value) // Parse the string returned into numbers
              }
@@ -222,17 +222,17 @@
 
          // Public Method Add List Item
          addListItem: function(obj, type) {
-             // Declare the Varaibles
+             // Declare the Variables
              var html, newHtml, element;
             // Create HTML String with Placeholder text assigning variables
             if ( type === 'inc') {
-                element = DOMstrings.incomeContainer;
+                element = DOMstrings.container;
 
-                html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                html = '<div class="panel__item panel__item-income" id="inc-%id%"><div class="panel__item__details"><div class="panel__item__details-name">%description%</div></div><div class="panel__item__value"><div class="panel__item__value-number">%value%</div></div><button class="item__delete--btn"><svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></button></div>';
             } else if ( type === 'exp') {
-                element = DOMstrings.expensesContainer;
+                element = DOMstrings.container;
 
-                html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                html = '<div class="panel__item panel__item-expense" id="exp-%id%"><div class="panel__item__details"><div class="panel__item__details-name">%description%</div></div><div class="panel__item__value"><div class="panel__item__value-number">%value%</div><div class="panel__item__value-percentage">5%</div></div><button class="item__delete--btn"> <svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></button></div>';
             }
 
             // Replace placeholder text with actual data
@@ -243,7 +243,7 @@
             newHtml = newHtml.replace('%value%', formatNumber(obj.value));
 
             // Insert the HTML into the DOM
-            document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
+            document.querySelector(element).insertAdjacentHTML('afterbegin', newHtml);
 
          },
 
@@ -327,8 +327,9 @@
                 DOMstrings.inputValue
             );
 
-            nodeListForEach(fields, function(cur) {
-                cur.classList.toggle('red-focus');
+            Array.prototype.forEach.call(fields, function(cur) {
+                cur.classList.toggle('red');
+                cur.classList.toggle('red-border');
             });
             document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
         },

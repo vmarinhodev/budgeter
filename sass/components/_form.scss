@@ -1,5 +1,6 @@
 /*INPUTS*/
 
+
 .input {
     display: flex;
     align-items: flex-end;
@@ -19,4 +20,142 @@
   
   .input > div:not(:last-child) {
     margin-right: 2rem;
+  }
+
+  button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    line-height: 1;
+    display: flex;
+  }
+  
+  button svg {
+    pointer-events: none;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  .input__submit svg {
+    fill: currentColor;
+    width: 3rem;
+    height: 3rem;
+    transition: all 0.3s;
+  }
+  
+  .red-border {
+    border-color: rgba(217, 85, 81, 0.6) !important;
+  }
+  
+  .red {
+    color: $color-red !important;
+  }
+  
+  .add__btn {
+    color: $color-green;
+  }
+
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color-grey-light-4;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $color-grey-light-4;
+  }
+  
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $color-grey-light-4;
+  }
+  
+  .form__input {
+    font-family: 'Titillium Web', sans-serif;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $color-green;
+    transition: all 0.3s;
+    border-bottom: 2px solid rgba(98, 193, 93, 0.6);
+  }
+  
+  .form__label {
+    position: absolute;
+    padding: 5px 10px;
+    color: $color-grey-light-4;
+    font-size: 1.4rem;
+    display: block;
+    margin-top: 3px;
+    opacity: 1;
+    transform: translateY(0rem);
+    transition: all 0.3s;
+  }
+  
+  .form__input:placeholder-shown + .form__label {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  .switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .slider {
+    background-color: $color-green;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: '';
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: $color-red;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
   }
