@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Titillium+Web:400,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <title>Budget Calculator</title>
+
+    <svg
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden;"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <symbol id="icon-checkmark" viewBox="0 0 32 32">
+          <title>checkmark</title>
+          <path
+            d="M28.998 8.531l-2.134-2.134c-0.394-0.393-1.030-0.393-1.423 0l-12.795 12.795-6.086-6.13c-0.393-0.393-1.029-0.393-1.423 0l-2.134 2.134c-0.393 0.394-0.393 1.030 0 1.423l8.924 8.984c0.393 0.393 1.030 0.393 1.423 0l15.648-15.649c0.393-0.392 0.393-1.030 0-1.423z"
+          ></path>
+        </symbol>
+        <symbol id="icon-cross" viewBox="0 0 20 20">
+          <title>cross</title>
+          <path
+            d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
+          ></path>
+        </symbol>
+        <symbol id="icon-box-add" viewBox="0 0 32 32">
+          <title>box-add</title>
+          <path
+            d="M26 2h-20l-6 6v21c0 0.552 0.448 1 1 1h30c0.552 0 1-0.448 1-1v-21l-6-6zM16 26l-10-8h6v-6h8v6h6l-10 8zM4.828 6l2-2h18.343l2 2h-22.343z"
+          ></path>
+        </symbol>
+        <symbol id="icon-box-remove" viewBox="0 0 32 32">
+          <title>box-remove</title>
+          <path
+            d="M26 2h-20l-6 6v21c0 0.552 0.448 1 1 1h30c0.552 0 1-0.448 1-1v-21l-6-6zM20 20v6h-8v-6h-6l10-8 10 8h-6zM4.828 6l2-2h18.343l2 2h-22.343z"
+          ></path>
+        </symbol>
+      </defs>
+    </svg>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top-panel">
+        <div class="summary">
+          <div class="summary__label">
+            <span class="summary__label--month">%Month%</span>
+          </div>
+          <div class="summary__value">+ 2,345.64</div>
+          <div class="summary__label">Available Budget</div>
+        </div>
+        <div class="lower-panel">
+          <div class="lower-panel__income clearfix">
+            <div class="slower-panel__income--label">Income</div>
+            <div class="right">
+              <div class="lower-panel__income--value">+ 4,300.00</div>
+              <div class="lower-panel__income--percentage">&nbsp;</div>
+            </div>
+          </div>
+          <div class="input__type">
+            <label class="switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="slider round"></div>
+            </label>
+          </div>
+          <div class="lower-panel__expenses clearfix">
+            <div class="lower-panel__expenses--label">Expenses</div>
+            <div class="right clearfix">
+              <div class="lower-panel__expenses--value">- 1,954.36</div>
+              <div class="lower-panel__expenses--percentage">45%</div>
+            </div>
+          </div>
+        </div>
+        <div class="input">
+          <div class="input__description">
+            <input
+              type="text"
+              id="description"
+              class="add__description form__input"
+              placeholder="Add description"
+            />
+            <label for="description" class="form__label"
+              >Add description</label
+            >
+          </div>
+          <div class="input__value">
+            <input
+              type="number"
+              id="value"
+              class="add__value form__input"
+              placeholder="Value"
+            />
+            <label for="value" class="form__label">Value</label>
+          </div>
+          <div class="input__submit">
+            <button class="add__btn">
+              <svg class="icon icon-checkmark">
+                <use xlink:href="#icon-checkmark"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="panel">
+        </div>
+    </div>
+    <script src="index.js"></script>
+  <script src="js/bundle.js"></script></body>
+</html>
