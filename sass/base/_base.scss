@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+    background: #5c258d; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5c258d, #4389a2); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5c258d, #4389a2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    color: #d3d3d3;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 62.5%;
+    line-height: 1.7;
+    height: 100vh; 
+    position: relative;
+}
