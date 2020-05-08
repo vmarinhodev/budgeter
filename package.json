@@ -1,17 +1,37 @@
 {
-  "name": "javascripttests",
+  "name": "budgeter",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "js budget app",
+  "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass sass/main.scss dist/css/style.css -w",
+    "dev": "webpack --mode development",
+    "deploy": "gh-pages -d dist",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmarinhodev/budgeter.git"
   },
   "author": "vm.dev",
   "license": "ISC",
+  "homepage": "https://vmarinhodev.github.io/bugeter/",
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
+    "install": "^0.13.0",
+    "node-sass": "^4.14.1",
+    "npm": "^6.14.5",
+    "regenerator-runtime": "^0.13.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "minimist": ">=1.2.3",
+    "compile-sass": "^1.1.0",
     "gh-pages": "^2.2.0"
   }
 }
