@@ -32,7 +32,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "minimist": ">=1.2.3",
+    "minimist": ">=1.2.6",
     "compile-sass": "^1.1.0",
     "gh-pages": "^2.2.0"
   }
